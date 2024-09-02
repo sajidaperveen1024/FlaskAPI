@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: house-price-prediction
+    runtime: python # Added the 'runtime' property
+    envVars:        # Corrected the 'env' property if you need environment variables
+      - key: ENV
+        value: production
+    buildCommand: "" # The build command can be empty if you don't need it
+    startCommand: gunicorn app:app
