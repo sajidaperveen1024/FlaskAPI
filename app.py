@@ -14,7 +14,7 @@ app = Flask(__name__)
 @app.route('/train', methods=['POST'])
 def train():
     # Load the dataset
-    df = pd.read_csv("melb_data.csv")
+    df = pd.read_csv("data/melb_data.csv")
 
     # Preprocessing
     df = df.dropna(subset=['Price'])  # Drop rows where 'Price' is missing
