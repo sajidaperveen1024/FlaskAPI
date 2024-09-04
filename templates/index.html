@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Predict House Price</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="bedrooms">Number of Bedrooms</label>
+                <input type="text" class="form-control" name="bedrooms" placeholder="Enter number of bedrooms" required>
+            </div>
+            <div class="form-group">
+                <label for="bathrooms">Number of Bathrooms</label>
+                <input type="text" class="form-control" name="bathrooms" placeholder="Enter number of bathrooms" required>
+            </div>
+            <div class="form-group">
+                <label for="cars">Number of Car Spaces</label>
+                <input type="text" class="form-control" name="cars" placeholder="Enter number of car spaces" required>
+            </div>
+            <div class="form-group">
+                <label for="landsize">Land Size (sq meters)</label>
+                <input type="text" class="form-control" name="landsize" placeholder="Enter land size in square meters" required>
+            </div>
+            <div class="form-group">
+                <label for="building_area">Building Area (sq meters)</label>
+                <input type="text" class="form-control" name="building_area" placeholder="Enter building area in square meters" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if prediction_text %}
+            <h3 class="mt-4">{{ prediction_text }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
